@@ -109,7 +109,7 @@ module.exports.getAccessToken = async (event) => {
 };
 
 
-//get access to calendar serverless function
+//get access to calendar serverless function  STEP 3
 
   module.exports.getCalendarEvents = async (event) => {
 
