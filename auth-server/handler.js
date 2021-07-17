@@ -148,13 +148,15 @@ module.exports.getAccessToken = async (event) => {
           };
         })
         .catch((err) => {
-          console.error(err);
-          return {
-            statusCode: 500,
-            headers: {
-              'Access-Control-Allow-Origin': '*',
-            },
-            body: JSON.stringify(err),
-          }
-          });};
-        }
+      // Handle error
+      console.error(err);
+      return {
+        statusCode: 500,
+        headers: {
+          'Access-Control-Allow-Origin': '*'
+        },
+        body: JSON.stringify(err),
+      };
+    });
+};
+
