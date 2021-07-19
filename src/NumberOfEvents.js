@@ -32,7 +32,7 @@ class NumberOfEvents extends Component {
         
         <div className="NumberOfEvents">
           
-          <label For='numberOfEvent'>Number of Events</label>
+          <label htmlFor='numberOfEvent'>Number of Events</label>
           <input type="number" className="event-number-input" placeholder='Enter Number of Events'
             value={this.state.numberOfEvents} onChange={this.handleInputChanged} />
 
