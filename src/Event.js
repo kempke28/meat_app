@@ -22,6 +22,7 @@ handleShowHideButton = () => {
   }
 };
 
+
   render() {
     const { event } = this.props;
     return (
@@ -39,7 +40,7 @@ handleShowHideButton = () => {
         
 
         <button
-          className='details-button'
+          className='details-btn'
           onClick={() => this.handleShowHideButton()}
         >
           {!this.state.showHideDetails ? 'Show Details' : 'Hide Details'}
@@ -47,5 +48,6 @@ handleShowHideButton = () => {
       </div>
     );
   }
+
 }
 export default Event;

@@ -23,4 +23,6 @@ describe('<NumberOfEvents /> component', () => {
     expect(numberOfEventshWrapper.state('numberOfEvents')).toBe(2);
     });
     
+//Create integration tests for the NumberOfEvents component following a test-driven development approach. This will be very similar to what you already did for the CitySearch component in this Exercise. The two things you should test are
+
    })
