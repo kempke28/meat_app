@@ -19,7 +19,7 @@ class App extends Component {
   }
 
 
-  // efactor the updateEvents function in your “App.js” file to take 2 parameters, location and eventCount, either of which might be undefined when this function is called. You’ll need numberOfEvents: 32 in the state of the App component (you can pick whatever default value you want for the state instead of 32). The updateEvents function will then need to filter the results based on location if it’s passed in and shorten the filtered array to the number of events either in the state (if it’s not passed in) or to eventCount (if it is passed in).
+  // refactor the updateEvents function in your “App.js” file to take 2 parameters, location and eventCount, either of which might be undefined when this function is called. You’ll need numberOfEvents: 32 in the state of the App component (you can pick whatever default value you want for the state instead of 32). The updateEvents function will then need to filter the results based on location if it’s passed in and shorten the filtered array to the number of events either in the state (if it’s not passed in) or to eventCount (if it is passed in).
   updateEvents = (location, eventCount) => {
     getEvents().then((events) => {
       const locationEvents = (location === 'all') ?

@@ -13,11 +13,7 @@ import NProgress from 'nprogress';
  */
  
 
- export const extractLocations = (events) => {
-    var extractLocations = events.map((event) => event.location);
-    var locations = [...new Set(extractLocations)];
-    return locations;
-  };
+ 
 
 
   /** This function takes the accessToken you found and checks whether it’s a valid token or not. If it’s not, then you follow the redirect logic and send the user to the Google Authorization screen. */
@@ -70,9 +66,15 @@ import NProgress from 'nprogress';
         localStorage.setItem("locations", JSON.stringify(locations));
       }
       NProgress.done();
-      return result.data.events;
-    }
+      return result.data.events
+    };
   };  
+
+  export const extractLocations = (events) => {
+    var extractLocations = events.map((event) => event.location);
+    var locations = [...new Set(extractLocations)];
+    return locations;
+  };
 
 
 

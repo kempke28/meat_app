@@ -7,6 +7,9 @@ state = {
   showHideDetails: false,
   divStyle: {
     visible: false
+  },
+  myStyle:{
+    display: "none"
   }
 };
 
@@ -31,19 +34,26 @@ handleShowHideButton = () => {
         <h3 className='eventDate'>{event.start.dateTime}</h3>
         <h3 className='eventLocation'>{event.location}</h3>
 
-        
-          <div className='event-hidden-details' style={this.state.divStyle}>
+        {!this.state.showHideDetails ? 
+        <div className='event-hidden-details' style={this.state.divStyle}>
             <h2>About event:</h2>
             <p>{event.description}</p>
             <p>{event.email}</p>
+          </div> : 
+          <div className='event-hidden-details' style={this.state.divStyle}>
+            <h2 style={this.state.myStyle}>About event:</h2>
+            <p style={this.state.myStyle}>{event.description}</p>
+            <p style={this.state.myStyle}>{event.email}</p>
           </div>
+          }
+          
         
 
         <button
           className='details-btn'
           onClick={() => this.handleShowHideButton()}
         >
-          {!this.state.showHideDetails ? 'Show Details' : 'Hide Details'}
+          {!this.state.showHideDetails ? 'Hide Details' : 'Show Details'}
         </button>
       </div>
     );
