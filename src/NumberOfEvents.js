@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
-
+import { ErrorAlert } from './alert';
 
 class NumberOfEvents extends Component {
   state = {
-    numberEvents: 8,
+    numberEvents: 32,
     errorText: ''
   };
 
   handleInputChanged = (event) => {
     const value = event.target.value;
+    this.props.updateEvents(null, value);
+    this.setState({ numberOfEvents: value });
+
     if (value < 1) {
         return this.setState({
         errorText: 'Please choose a number between 1 and 32',
@@ -31,6 +34,7 @@ class NumberOfEvents extends Component {
     return (
         
         <div className="NumberOfEvents">
+          <ErrorAlert text={this.state.infoText} />
           
           <label htmlFor='numberOfEvent'>Number of Events</label>
           <input type="number" className="event-number-input" placeholder='Enter Number of Events'

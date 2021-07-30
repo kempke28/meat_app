@@ -64,7 +64,7 @@ class App extends Component {
       <div className="App">
         
         <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
-        <NumberOfEvents />
+        <NumberOfEvents updateEvents={this.updateEvents}/>
         <EventList events={this.state.events} />
         
       </div>
