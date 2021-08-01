@@ -21,11 +21,16 @@ class App extends Component {
 
   // refactor the updateEvents function in your “App.js” file to take 2 parameters, location and eventCount, either of which might be undefined when this function is called. You’ll need numberOfEvents: 32 in the state of the App component (you can pick whatever default value you want for the state instead of 32). The updateEvents function will then need to filter the results based on location if it’s passed in and shorten the filtered array to the number of events either in the state (if it’s not passed in) or to eventCount (if it is passed in).
   updateEvents = (location, eventCount) => {
+    this.setState({currentLocation: location, numberOfEvents: eventCount});
     getEvents().then((events) => {
-      const locationEvents = (location === 'all') ?
+      let locationEvents = (location === 'all') ?
         events :
         events.filter((event) => event.location === location);
-        events.filter((event) => event.eventCount === eventCount);
+      if(eventCount != null )
+      {
+        locationEvents = locationEvents.filter((event, index) => index < eventCount);
+      }
+      
       this.setState({
         events: locationEvents
       });
@@ -63,8 +68,8 @@ class App extends Component {
     return (
       <div className="App">
         
-        <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} />
-        <NumberOfEvents updateEvents={this.updateEvents}/>
+        <CitySearch locations={this.state.locations} updateEvents={this.updateEvents} numberOfEvents={this.state.numberOfEvents}/>
+        <NumberOfEvents updateEvents={this.updateEvents} location={this.state.currentLocation}/>
         <EventList events={this.state.events} />
         
       </div>

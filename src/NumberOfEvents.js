@@ -3,32 +3,31 @@ import { ErrorAlert } from './alert';
 
 class NumberOfEvents extends Component {
   state = {
-    numberEvents: 32,
+    numberOfEvents: 32,
     errorText: ''
   };
-
+  
   handleInputChanged = (event) => {
     const value = event.target.value;
-    this.props.updateEvents(null, value);
-    this.setState({ numberOfEvents: value });
-
     if (value < 1) {
-        return this.setState({
+      return this.setState({
         errorText: 'Please choose a number between 1 and 32',
         numberOfEvents: ''
-        });
+      });
     } else if (value > 32) {
-        return this.setState({
-          errorText: 'Please choose a number between 1 and 32',
-          numberOfEvents: ''
-        });
-      } else {
-        this.setState({
-          numberOfEvents: value,
-          errorText: '',
-        });
-      }
-    };
+      return this.setState({
+        errorText: 'Please choose a number between 1 and 32',
+        numberOfEvents: ''
+      });
+    } else {
+      this.setState({
+        numberOfEvents: value,
+        errorText: '',
+      });
+      
+    }
+    this.props.updateEvents(this.props.location, value);
+  };
 
   render() {
     return (
