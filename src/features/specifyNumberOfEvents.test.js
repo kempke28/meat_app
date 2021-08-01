@@ -18,7 +18,7 @@ defineFeature(feature, (test) => {
         });
         then('the default number of shown events is 32', () => {
             AppWrapper.update();
-            expect(AppWrapper.find('.Event')).toBe(32);
+            expect(AppWrapper.find('.event-number-input').props().value).toBe(32);
         });
     });
 
