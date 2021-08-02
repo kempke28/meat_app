@@ -3,12 +3,12 @@ import { InfoAlert } from './alert';
 
 class CitySearch extends Component {
 
-  State = ({
+  state = {
     query: '',
     suggestions: [],
     showSuggestions: undefined,
     infoText: ''
-  })
+  }
 
   handleInputChanged = (event) => {
     const value = event.target.value;
@@ -34,7 +34,7 @@ class CitySearch extends Component {
       query: suggestion,
       suggestions: [],
       showSuggestions:false,
-      infoText:''
+      infoText: ""
     });
   
     this.props.updateEvents(suggestion, this.props.numberOfEvents);
