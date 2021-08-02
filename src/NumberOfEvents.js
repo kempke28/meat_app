@@ -18,13 +18,7 @@ class NumberOfEvents extends Component {
       return this.setState({
         errorText: 'Please choose a number between 1 and 32',
         numberOfEvents: ''
-      });
-    } else {
-      this.setState({
-        numberOfEvents: value,
-        errorText: '',
-      });
-      
+      });      
     }
     this.props.updateEvents(this.props.location, value);
   };
@@ -33,7 +27,7 @@ class NumberOfEvents extends Component {
     return (
         
         <div className="NumberOfEvents">
-          <ErrorAlert text={this.state.infoText} />
+          <ErrorAlert text={this.state.errorText} />
           
           <label htmlFor='numberOfEvent'>Number of Events</label>
           <input type="number" className="event-number-input" placeholder='Enter Number of Events'
