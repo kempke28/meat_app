@@ -3,11 +3,12 @@ import { InfoAlert } from './alert';
 
 class CitySearch extends Component {
 
-  state = {
+  State = ({
     query: '',
     suggestions: [],
-    showSuggestions: undefined
-  }
+    showSuggestions: undefined,
+    infoText: ''
+  })
 
   handleInputChanged = (event) => {
     const value = event.target.value;
