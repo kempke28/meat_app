@@ -29,10 +29,13 @@ describe('<Event /> component', () => {
     );
       });
         
-    
-    
-    
-    
+    test('show events on click', () => {
+      EventWrapper.setState({ showHideDetails: false })
+      EventWrapper.find('.details-btn').simulate('click');
+      expect(EventWrapper.state('showAndHideDetails')).props().toBe(true);
+      })
+    })
+        
     
       /*
     test('show event details, expand on click', () => {
