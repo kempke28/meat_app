@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/meat_app/static/css/main.aa261a69.chunk.css",
-    "main.js": "/meat_app/static/js/main.33ef6753.chunk.js",
-    "main.js.map": "/meat_app/static/js/main.33ef6753.chunk.js.map",
+    "main.js": "/meat_app/static/js/main.98b04c61.chunk.js",
+    "main.js.map": "/meat_app/static/js/main.98b04c61.chunk.js.map",
     "runtime-main.js": "/meat_app/static/js/runtime-main.618f6fde.js",
     "runtime-main.js.map": "/meat_app/static/js/runtime-main.618f6fde.js.map",
     "static/js/2.ee700608.chunk.js": "/meat_app/static/js/2.ee700608.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.618f6fde.js",
     "static/js/2.ee700608.chunk.js",
     "static/css/main.aa261a69.chunk.css",
-    "static/js/main.33ef6753.chunk.js"
+    "static/js/main.98b04c61.chunk.js"
   ]
 }
