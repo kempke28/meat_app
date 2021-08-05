@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/meat_app/static/css/main.aa261a69.chunk.css",
-    "main.js": "/meat_app/static/js/main.99d23fc2.chunk.js",
-    "main.js.map": "/meat_app/static/js/main.99d23fc2.chunk.js.map",
+    "main.js": "/meat_app/static/js/main.b2c3f992.chunk.js",
+    "main.js.map": "/meat_app/static/js/main.b2c3f992.chunk.js.map",
     "runtime-main.js": "/meat_app/static/js/runtime-main.618f6fde.js",
     "runtime-main.js.map": "/meat_app/static/js/runtime-main.618f6fde.js.map",
-    "static/js/2.ee700608.chunk.js": "/meat_app/static/js/2.ee700608.chunk.js",
-    "static/js/2.ee700608.chunk.js.map": "/meat_app/static/js/2.ee700608.chunk.js.map",
+    "static/js/2.b5f748be.chunk.js": "/meat_app/static/js/2.b5f748be.chunk.js",
+    "static/js/2.b5f748be.chunk.js.map": "/meat_app/static/js/2.b5f748be.chunk.js.map",
     "index.html": "/meat_app/index.html",
     "service-worker.js": "/meat_app/service-worker.js",
     "service-worker.js.map": "/meat_app/service-worker.js.map",
     "static/css/main.aa261a69.chunk.css.map": "/meat_app/static/css/main.aa261a69.chunk.css.map",
-    "static/js/2.ee700608.chunk.js.LICENSE.txt": "/meat_app/static/js/2.ee700608.chunk.js.LICENSE.txt"
+    "static/js/2.b5f748be.chunk.js.LICENSE.txt": "/meat_app/static/js/2.b5f748be.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.618f6fde.js",
-    "static/js/2.ee700608.chunk.js",
+    "static/js/2.b5f748be.chunk.js",
     "static/css/main.aa261a69.chunk.css",
-    "static/js/main.99d23fc2.chunk.js"
+    "static/js/main.b2c3f992.chunk.js"
   ]
 }
