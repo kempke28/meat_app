@@ -3,21 +3,23 @@ import { mockData } from './mock-data';
 import axios from 'axios';
 import NProgress from 'nprogress';
 
-/**
- *
- * @param {*} events:
- * The following function should be in the “api.js” file.
- * This function takes an events array, then uses map to create a new array with only locations.
- * It will also remove all duplicates by creating another new array using the spread operator and spreading a Set.
- * The Set will remove all duplicates from the array.
- */
- 
-
- 
-
+//** will remove the code from the URL once you’re finished with it. */
+const removeQuery = () => {
+  if (window.history.pushState && window.location.pathname) {
+    var newurl =
+      window.location.protocol +
+      "//" +
+      window.location.host +
+      window.location.pathname;
+    window.history.pushState("", "", newurl);
+  } else {
+    newurl = window.location.protocol + "//" + window.location.host;
+    window.history.pushState("", "", newurl);
+  }
+};
 
   /** This function takes the accessToken you found and checks whether it’s a valid token or not. If it’s not, then you follow the redirect logic and send the user to the Google Authorization screen. */
-  const checkToken = async (accessToken) => {
+  export const checkToken = async (accessToken) => {
     const result = await fetch(
       `https://www.googleapis.com/oauth2/v1/tokeninfo?access_token=${accessToken}`
     )
@@ -27,23 +29,15 @@ import NProgress from 'nprogress';
     return result;
   };
 
-
-  //** will remove the code from the URL once you’re finished with it. */
-  const removeQuery = () => {
-    if (window.history.pushState && window.location.pathname) {
-      var newurl =
-        window.location.protocol +
-        "//" +
-        window.location.host +
-        window.location.pathname;
-      window.history.pushState("", "", newurl);
-    } else {
-      newurl = window.location.protocol + "//" + window.location.host;
-      window.history.pushState("", "", newurl);
-    }
+  
+  
+  export const extractLocations = (events) => {
+    var extractLocations = events.map((event) => event.location);
+    var locations = [...new Set(extractLocations)];
+    return locations;
   };
 
-
+  
 
   export const getEvents = async () => {
     NProgress.start();
@@ -53,6 +47,11 @@ import NProgress from 'nprogress';
       return mockData;
     }
   
+    if (!navigator.onLine) {
+      const data = localStorage.getItem("lastEvents");
+      NProgress.done();
+      return data?JSON.parse(data).events:[];;
+    }
   
     const token = await getAccessToken();
   
@@ -69,13 +68,7 @@ import NProgress from 'nprogress';
       return result.data.events
     };
   };  
-
-  export const extractLocations = (events) => {
-    var extractLocations = events.map((event) => event.location);
-    var locations = [...new Set(extractLocations)];
-    return locations;
-  };
-
+ 
 
 
   /** If no authorization code is found (!code), the user is automatically redirected to the Google Authorization screen, where they can sign in and receive their code. */
@@ -101,8 +94,9 @@ import NProgress from 'nprogress';
   };
 
 
+
 /**  when the token doesn’t exist or is invalid, you need to get a new one. To that end, you need to redirect your users to log in with Google so they can be redirected back to your site with the code. The new token will be fetched in the code above using the function getToken */
-  const getToken = async (code) => {
+  export const getToken = async (code) => {
     const encodeCode = encodeURIComponent(code);
     const { access_token } = await fetch(
       'https://t9c5wopqjl.execute-api.eu-central-1.amazonaws.com/dev/api/token/' + encodeCode

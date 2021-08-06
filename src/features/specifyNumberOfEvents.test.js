@@ -31,7 +31,7 @@ defineFeature(feature, (test) => {
         });
         when('the user specified a number', () => {
             const numberOfEvents = { target: { value: 13 } };
-            AppWrapper.find('.numberOfEvents').simulate('change', numberOfEvents);
+            AppWrapper.find('.NumberOfEvents').simulate('change', numberOfEvents);
         });
         then('the maximum of events listed should be the specified number', () => {
             const NumberOfEventsWrapper = AppWrapper.find(NumberOfEvents);

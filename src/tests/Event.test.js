@@ -32,7 +32,7 @@ describe('<Event /> component', () => {
     test('show events on click', () => {
       EventWrapper.setState({ showHideDetails: false })
       EventWrapper.find('.details-btn').simulate('click');
-      expect(EventWrapper.state('showAndHideDetails')).props().toBe(true);
+      expect(EventWrapper.state('showHideDetails')).toBe(true);
       })
     })
         
