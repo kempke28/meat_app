@@ -5,13 +5,14 @@ import { loadFeature, defineFeature } from 'jest-cucumber';
 import { mount } from 'enzyme';
 
 const feature = loadFeature('./src/features/specifyNumberOfEvents.feature');
-let AppWrapper;
+
  
 
 defineFeature(feature, (test) => {
 
     //scenario 1
     test('If user hasn’t specified a number, 32 is the default number.', ({ given, when, then }) => {
+        let AppWrapper;
         given('the user did not specify a number of events being shown', () => {});
         when('app loaded', () => {
         AppWrapper = mount(<App />);
