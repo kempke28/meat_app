@@ -1,16 +1,14 @@
-# meat_app
+ # :see_no_evil: meat_app
 
-- [Live](<https://kempke28.github.io/meat_app/> "Live View")
 - https://kempke28.github.io/meat_app/
 
-![Alt Text](url) C:\Users\Dell\coding\html\portfolio\CF course start\archiv 4
+![Alt Text](https://github.com/kempke28/meat_app/blob/main/public/29.jpg)
 
-
-## Project Objetive
+## :tennis: Project Objetive
 
 Create an app that fetch an events API to show people, and with so getting familirazed with the react library/enviorment throguht testing (TDD) and import chartting into the project.
 
-## Features and what this little app is capable of
+## :tennis: Features and what this little app is capable of
 
 - Shows a vast range of events
 - filter the events by city or number
@@ -20,15 +18,15 @@ Create an app that fetch an events API to show people, and with so getting famil
 - Events are saved in local storage, so it can work offline
 
 
-## Technologies used
+## :tennis: Technologies used
 
-JavaScript
+JavaScript 
 React, 
 AWS,
 Google API Calendar and Authorization
 Cucumber and Pupeeter for Testing
 
-##Inside dependencies
+## :tennis: Inside dependencies :D
 
 ```bash
     "@testing-library/jest-dom": "^5.14.1",
