@@ -46,19 +46,18 @@ test('User should see a list of suggestions when they search for a city', ({ giv
 
 test('User can select a city from the suggested list', ({ given, when, then }) => {
   let AppWrapper;
-    given('user was typing “Berlin” in the city textbox', () => {
+    given('user was typing All in the city textbox', () => {
       AppWrapper = mount(<App />);
-      AppWrapper.find('.city').simulate('change', { target: { value: 'Berlin' } });
+      AppWrapper.find('.city').simulate('change', { target: { value: 'all' } });
     });
 
-    when('the user selects a city (e.g., “Berlin, Germany”) from the list', () => {
+    when('the user selects a city (e.g., “All”) from the list', () => {
       AppWrapper.find('.suggestions li').at(0).simulate('click');
     });
 
-    then('their city should be changed to that city (i.e., “Berlin, Germany”)', () => {
+    then('their city should be changed to that city (i.e., “All”)', () => {
       const CitySearchWrapper = AppWrapper.find(CitySearch);
-      expect(CitySearchWrapper.state('query')).toBe('Berlin, Germany');
+      expect(CitySearchWrapper.state('query')).toBe('all');
     });
   })
 })
-

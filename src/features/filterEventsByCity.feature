@@ -11,6 +11,6 @@ When the user starts typing in the city textbox
 Then the user should receive a list of cities (suggestions) that match what they’ve typed
 
 Scenario: User can select a city from the suggested list
-Given user was typing “Berlin” in the city textbox
-When the user selects a city (e.g., “Berlin, Germany”) from the list
-Then their city should be changed to that city (i.e., “Berlin, Germany”)
+Given user was typing All in the city textbox
+When the user selects a city (e.g., “All”) from the list
+Then their city should be changed to that city (i.e., “All”)
